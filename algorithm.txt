@@ -1,0 +1,28 @@
+Language: Perl
+  Install modules using CPAN: ( perl -MCPAN -e 'shell' )
+    Need 'make' (Linux) or 'nmake' (windows)
+  Modules:
+    Excel::Writer::XLSX
+    Win32::FileOp
+      selecting input CSV file
+      save file for spreadsheet
+Prompt
+  CSV input file
+    Windows file open dialog
+  Sample names in order
+  Solvent names in order
+Grid information
+  Rows per sample = 3
+  Columns per solvent = 9
+Read CSV data
+  First line = title
+  second line contains 3 comma separated strings
+  XSN = column number
+  YSN = row number
+Write CSV data into worksheet 'Raw Array Data'
+  XSN = 1
+  YSN = 1
+  Sample name index (3 spot cluster) = 1
+  write data
+  if XSN %9 = 0 then reset sample name index to 1
+  else if XSN %3 = 0 then increase name index by 1
